@@ -1,0 +1,29 @@
+<div class="all-employee">
+    <h3>All Employee </h3>
+    <table class="table table-bordered mt-3">
+        <thead>
+          <tr>
+            <th scope="col">Sr.No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Emp Id</th>
+            <th scope="col">Email ID</th>
+            <th scope="col">Mobile No</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of empDetails">
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.empId}}</td>
+                <td>{{employee.emailId}}</td>
+                <td>{{employee.mobileNo}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary1" (click)="editEmp(employee.id)">Edit</button>
+                    <button type="button" class="btn btn-danger ms-2" (click)="deleteEmp(employee.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+

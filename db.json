@@ -1,0 +1,86 @@
+{
+  "users": [
+    {
+      "name": "",
+      "emailId": "",
+      "mobileNo": "",
+      "password": "",
+      "id": 1
+    },
+    {
+      "name": "shubham",
+      "emailId": "abc@email.com",
+      "mobileNo": 373737,
+      "password": "283jjd",
+      "id": 2
+    },
+    {
+      "name": "xyz pqr",
+      "emailId": "xyz@gmail.com",
+      "mobileNo": 38383838299,
+      "password": "123",
+      "id": 3
+    }
+  ],
+  "employee": [
+    {
+      "name": "shubham athawale.",
+      "empId": 3839220,
+      "emailId": "shubham@gmail.com",
+      "mobileNo": 3840302220101,
+      "userId": "2",
+      "id": 1
+    },
+    {
+      "name": "akshay",
+      "empId": 328291,
+      "emailId": "abc@gmail.com",
+      "mobileNo": 38042993922,
+      "userId": "1",
+      "id": 2
+    },
+    {
+      "name": "rajvir gaitonde",
+      "empId": 7879786,
+      "emailId": "hbhjb",
+      "mobileNo": 787799,
+      "userId": "2",
+      "id": 3
+    },
+    {
+      "name": "akshau",
+      "empId": 8989,
+      "emailId": "njnjn",
+      "mobileNo": 898989,
+      "userId": "2",
+      "id": 4
+    },
+    {
+      "name": "shubham d. athawale",
+      "empId": 123456,
+      "emailId": "dsncjn",
+      "mobileNo": 4838499029302,
+      "userId": "3",
+      "id": 5
+    },
+    {
+      "name": "rohit",
+      "empId": 47457,
+      "emailId": "ksn",
+      "mobileNo": 8984984928,
+      "userId": "3",
+      "id": 6
+    },
+    {
+      "name": "amol thorat",
+      "empId": 3738,
+      "emailId": "amol@gmail.com",
+      "mobileNo": 43878729829,
+      "userId": "2",
+      "id": 7
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

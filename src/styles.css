@@ -1,1 +1,85 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+body{
+    font-family: sans-serif;
+}
+a{
+	cursor: pointer;
+}
+.btn-primary1{
+    background-color: #4723D9;
+    color: white;
+}
+.btn-primary1:hover{
+    background-color: #402d8d;
+    color: white;
+}
+/* ---------------------------register && login--------------------------- */
+.greeting{
+	background: linear-gradient(to bottom, rgba(26,111,118,1) 50%,rgba(40,30,101,1) 100%,rgba(125,185,232,1) 100%);
+	padding: 200px 35px;
+}
+.form-component{
+	background: #fff;
+	padding: 80px;
+}
+span.txt{
+	color: #17C296;
+}
+.greeting p{
+	padding-right: 115px;
+}
+.sign-up h2{
+	font-weight: bold;
+}
+.sign-up .form-control{
+	border: none;
+	border-radius: 0px;
+	border-bottom: 1px solid #F2F2F2;
+}
+.sign-up .form-control::placeholder{
+	font-size: 13px;
+	color: #C2C2CC;
+}
+.sign-up .form-control:focus{
+	box-shadow: none;
+	border-bottom: 1px solid #F2F2F2;
+}
+.form-component .form-group input{
+	padding-left: 27px;
+}
+.form-component .form-group{
+    position: relative
+}
+.form-component .form-group .bi{
+    position: absolute;
+    left: 0;
+    padding: 5px 0px;	
+    color: #C2C2CC;
+    font-size: 18px;
+}
+.form-component .btn-success{
+	padding: 10px 30px;
+	background: #11C892;
+	border: none;
+	border-radius: 30px;
+}
+.form-component .btn-success:hover{
+	background: #11C892;
+}
+.form-component .btn-success:focus{
+	box-shadow: none;
+}
+p.exist{
+	font-size: 14px;
+	color: #C2C2CC;
+	padding-top: 15px;
+}
+p.exist span{
+	cursor: pointer;
+	color: #ABA5D3;
+}

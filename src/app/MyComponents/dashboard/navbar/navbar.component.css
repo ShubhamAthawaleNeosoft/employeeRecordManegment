@@ -1,0 +1,15 @@
+.nav_bar{
+    width: 80%;
+    position: fixed;
+    background-color: #F7F6FB;
+    padding: 12px 48px 12px 0px;
+}
+.nav_bar a{
+    text-decoration: none;
+    font-weight: 500;
+    color:#4723D9;
+}
+.nav_bar a i{
+    font-size: 27px;
+    padding-left: 8px;
+}

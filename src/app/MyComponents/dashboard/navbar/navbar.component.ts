@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserDataService } from 'src/app/services/user-data.service';
 
@@ -9,8 +9,11 @@ import { UserDataService } from 'src/app/services/user-data.service';
 })
 export class NavbarComponent implements OnInit {
   user:any;
+  toggle:boolean = true;
+  isStatus : any
+
   
-  constructor(private userData: UserDataService,private router:Router) { 
+  constructor(private userData: UserDataService,private router:Router ) { 
     userData.users().subscribe((data)=>{
       this.user=data;
       var uid =localStorage.getItem("uid");
@@ -18,8 +21,16 @@ export class NavbarComponent implements OnInit {
       this.user = found[0]?.name;
     });
   }
+ 
 
   ngOnInit(): void {
+    this.userData.nontificationSubject.subscribe((res:any)=>{
+      this.isStatus = res;
+    })
+  }
+  clickEvent(){
+    this.toggle = ! this.toggle
+    this.userData.sendNotification(this.toggle)   
   }
 
 }

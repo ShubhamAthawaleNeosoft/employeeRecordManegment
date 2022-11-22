@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl,FormControlName } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { UserDataService } from 'src/app/services/user-data.service';
 export class AddEmployeeComponent implements OnInit {
   uid = localStorage.getItem("uid");
 
-  constructor(private userData: UserDataService,private router:Router) { 
+  constructor(private userData: UserDataService,private router:Router,private toastr: ToastrService) { 
     
   }
 
@@ -29,6 +30,7 @@ export class AddEmployeeComponent implements OnInit {
     this.userData.addEmployee(this.addEmplyeeForm.value).subscribe((result)=>{
       console.log(result);
     })
+    this.toastr.success('Employee Added Successfully',"Message");
     this.router.navigate(['/dashboard/all_employee']);
   }
  

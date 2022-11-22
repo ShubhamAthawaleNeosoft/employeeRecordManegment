@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class EditEmployeeComponent implements OnInit {
  employees : any;
  empId = this.routes.snapshot.params['id']
 //  empDetail : any;
-  constructor(private userData: UserDataService,private router:Router, private routes: ActivatedRoute) {
+  constructor(private userData: UserDataService,private router:Router, private routes: ActivatedRoute,private toastr: ToastrService) {
     
   }
   editEmplyeeForm = new FormGroup({
@@ -23,20 +24,19 @@ export class EditEmployeeComponent implements OnInit {
   })
 
   editEmp(){
-   console.log("hello")
    console.log(this.editEmplyeeForm.value)
-    this.userData.editEmployee(this.employees.id,this.editEmplyeeForm.value).subscribe((result)=>{
+    this.userData.editEmployee(this.employees._id,this.editEmplyeeForm.value).subscribe((result)=>{
       console.log(result);
     })
+    this.toastr.success('Edit Empolyee Record Successfully',"Message");
     this.router.navigate(['/dashboard/all_employee']);
   }
 
   ngOnInit(): void {
     this.userData.employees().subscribe((data)=>{
       this.employees=data;
-      var editEmp= this.employees.find((val:any)=>{return(val.id==this.empId)})
+      var editEmp= this.employees.find((val:any)=>{return(val._id==this.empId)})
       this.employees=editEmp;
-      console.log(this.employees)
       if(this.employees){
       this.editEmplyeeForm.controls['name'].setValue(this.employees.name)
       this.editEmplyeeForm.controls['empId'].setValue(this.employees.empId)

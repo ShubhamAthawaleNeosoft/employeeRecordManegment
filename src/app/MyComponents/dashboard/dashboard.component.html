@@ -1,5 +1,7 @@
 <div class="d-flex">
     <app-sidebar></app-sidebar>
-    <app-navbar class="app_navbar"></app-navbar>  
+    <app-navbar class="dashboared" [class.toggle]='isStatus'></app-navbar>  
 </div>
+<div class="dashboared" [class.toggle]='isStatus'>
 <router-outlet></router-outlet>
+</div>

@@ -58,18 +58,10 @@
     {
       "name": "shubham d. athawale",
       "empId": 123456,
-      "emailId": "dsncjn",
+      "emailId": "dsncjnws",
       "mobileNo": 4838499029302,
       "userId": "3",
       "id": 5
-    },
-    {
-      "name": "rohit",
-      "empId": 47457,
-      "emailId": "ksn",
-      "mobileNo": 8984984928,
-      "userId": "3",
-      "id": 6
     },
     {
       "name": "amol thorat",
@@ -78,6 +70,14 @@
       "mobileNo": 43878729829,
       "userId": "2",
       "id": 7
+    },
+    {
+      "name": "jbnkmk",
+      "empId": 9897988,
+      "emailId": "nmkmml",
+      "mobileNo": 9089808,
+      "userId": "3",
+      "id": 8
     }
   ],
   "profile": {

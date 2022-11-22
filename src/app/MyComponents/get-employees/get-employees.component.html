@@ -1,0 +1,50 @@
+
+<div class="get_employee">
+    <h3>Add Employee</h3>
+        <form class="pt-3" [formGroup]="addEmplyeeForm" (ngSubmit)="addEmp()">
+            <div class="mb-3">
+                <label class="form-label">Emplyee Name</label>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Salary</label>
+                <input type="text" class="form-control" formControlName="salary">
+              </div>
+            <div class="mb-3">
+              <label class="form-label">Age</label>
+              <input type="text" class="form-control" formControlName="age">
+            </div>
+            <button type="submit" class="btn btn-primary1">Submit</button>
+          </form>
+
+
+    <h3 class="mt-4">All Employee </h3>
+
+    <div class="table-responsive">
+        <table class="table table-bordered mt-3">
+            <thead>
+              <tr>
+                <th scope="col">Sr.No</th>
+                <th scope="col">Emp Name</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Age</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employees;let indexOfelement=index">
+                    <td>{{indexOfelement+1}}</td>
+                    <td>{{employee.employee_name}}</td>
+                    <td>{{employee.employee_salary}}</td>
+                    <td>{{employee.employee_age}}</td>
+                    <td class="d-md-flex gap-2">
+                        <!-- <button type="button" class="btn btn-primary1">Edit</button> -->
+                        <button type="button" class="btn btn-danger" (click)="delEmp(employee.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+</div>
+
+

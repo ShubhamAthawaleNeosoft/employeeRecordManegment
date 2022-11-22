@@ -1,5 +1,6 @@
 <div class="all-employee">
     <h3>All Employee </h3>
+    <div class="table-responsive">
     <table class="table table-bordered mt-3">
         <thead>
           <tr>
@@ -12,18 +13,19 @@
           </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let employee of empDetails">
-                <td>{{employee.id}}</td>
+            <tr *ngFor="let employee of empDetails;let indexOfelement=index">
+                <td>{{indexOfelement+1}}</td>
                 <td>{{employee.name}}</td>
                 <td>{{employee.empId}}</td>
                 <td>{{employee.emailId}}</td>
                 <td>{{employee.mobileNo}}</td>
-                <td>
-                    <button type="button" class="btn btn-primary1" (click)="editEmp(employee.id)">Edit</button>
-                    <button type="button" class="btn btn-danger ms-2" (click)="deleteEmp(employee.id)">Delete</button>
+                <td class="d-md-flex gap-2">
+                    <button type="button" class="btn btn-primary1" (click)="editEmp(employee._id)">Edit</button>
+                    <button type="button" class="btn btn-danger" (click)="deleteEmp(employee._id)">Delete</button>
                 </td>
             </tr>
         </tbody>
       </table>
+    </div>
 </div>
 

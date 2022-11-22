@@ -1,6 +1,7 @@
-<div class="nav_bar shadow">
-    <div class="d-flex justify-content-end">
-        <a class="d-flex align-items-center" aria-current="page" href="#">Welcome, {{user}}
+<div class="nav_bar shadow" [class.toggle]='isStatus'>
+    <div class="d-flex justify-content-between">
+        <button class="btn" type="button" (click)="clickEvent()"><i class="bi bi-justify"></i></button>
+        <a class="d-flex align-items-center"  href="#">Welcome, {{user}}
             <span>
                 <i class="bi bi-person-circle"></i>
             </span>

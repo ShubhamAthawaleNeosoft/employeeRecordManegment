@@ -1,8 +1,11 @@
 .nav_bar{
-    width: 80%;
+    width: calc(100% - 250px);
     position: fixed;
     background-color: #F7F6FB;
     padding: 12px 48px 12px 0px;
+}
+.nav_bar.toggle{
+    width: 100%;
 }
 .nav_bar a{
     text-decoration: none;
@@ -13,3 +16,8 @@
     font-size: 27px;
     padding-left: 8px;
 }
+/* @media screen and (max-width: 768px) {
+    .nav_bar.nav-mb{
+        width: 100%;
+    }
+  } */

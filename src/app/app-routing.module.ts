@@ -5,6 +5,7 @@ import { AllEmployeeComponent } from './MyComponents/dashboard/all-employee/all-
 import { DashboardComponent } from './MyComponents/dashboard/dashboard.component';
 import { EditEmployeeComponent } from './MyComponents/dashboard/edit-employee/edit-employee.component';
 import { ProfileComponent } from './MyComponents/dashboard/profile/profile.component';
+import { GetEmployeesComponent } from './MyComponents/get-employees/get-employees.component';
 import { LoginComponent } from './MyComponents/login/login.component';
 import { RegisterComponent } from './MyComponents/register/register.component';
 
@@ -16,7 +17,8 @@ const routes: Routes = [
       {path : 'profile',component:ProfileComponent},
       {path : 'add_employee',component:AddEmployeeComponent},
       {path : 'all_employee',component:AllEmployeeComponent},
-      {path : 'edit_employee/:id',component:EditEmployeeComponent}
+      {path : 'get_employee',component:GetEmployeesComponent},
+      {path : 'edit_employee/:id',component:EditEmployeeComponent},
     ]  
   }
 ];
@@ -26,4 +28,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { };
-export const routingComponents = [DashboardComponent,AddEmployeeComponent,AllEmployeeComponent,ProfileComponent,RegisterComponent,LoginComponent,EditEmployeeComponent]
+export const routingComponents = [DashboardComponent,AddEmployeeComponent,AllEmployeeComponent,ProfileComponent,RegisterComponent,LoginComponent,EditEmployeeComponent,GetEmployeesComponent]

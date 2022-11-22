@@ -10,6 +10,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
 import { ToastrModule} from 'ngx-toastr'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { GetEmployeesComponent } from './MyComponents/get-employees/get-employees.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SidebarComponent,
     NavbarComponent,
     routingComponents,
+    // GetEmployeesComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      
+      timeOut:3000,
     })
   ],
   providers: [],

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  isStatus : any;
+  constructor(private userData :UserDataService) { }
 
   ngOnInit(): void {
+    this.userData.nontificationSubject.subscribe((res:any)=>{
+      this.isStatus = res;
+    })
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserDataService } from 'src/app/services/user-data.service';
@@ -15,15 +15,11 @@ export class LoginComponent implements OnInit {
   isValid=false;
 
   loginForm = new FormGroup({
-    emailId :new FormControl(''),
-    password :new FormControl(''),
+    emailId :new FormControl('',[Validators.required,Validators.email]),
+    password :new FormControl('',[Validators.required,Validators.minLength(5)]),
   })
 
   constructor(private userData: UserDataService,private router:Router,private toastr: ToastrService) { 
-    userData.users().subscribe((data)=>{
-      this.users=data;
-    });
-
   }
   loginUser(){
     const found = this.users.find((element:any)=>{
@@ -44,8 +40,11 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['']);
   }
   ngOnInit(): void {
-    
+    this.userData.users().subscribe((data)=>{
+      this.users=data;
+    });
   }
-
+  get userEmailid(){return this.loginForm.get('emailId')}
+  get userPassword(){return this.loginForm.get('password')}
 }
 

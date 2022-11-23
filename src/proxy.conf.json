@@ -1,0 +1,8 @@
+{
+    "/api": {
+        "target": "https://shubhamathawaleneosoft.github.io/employeeRecordManegment/",
+        "secure": false,
+        "changeOrigin" :true,
+        "logLevel" : "debug"
+    }
+}

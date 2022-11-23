@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormControl,FormControlName } from '@angular/forms';
+import {FormGroup,FormControl,FormControlName, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserDataService } from 'src/app/services/user-data.service';
@@ -17,10 +17,10 @@ export class AddEmployeeComponent implements OnInit {
   }
 
   addEmplyeeForm = new FormGroup({
-    name :new FormControl(''),
-    empId :new FormControl(''),
-    emailId :new FormControl(''),
-    mobileNo :new FormControl(''),
+    name :new FormControl('',[Validators.required,Validators.pattern('[a-z A-Z]+$')]),
+    empId :new FormControl('',[Validators.required]),
+    emailId :new FormControl('',[Validators.required,Validators.email]),
+    mobileNo :new FormControl('',[Validators.required,Validators.pattern("^[0-9]{10}$")]),
     userId : new FormControl('<string | null>'),
   })
 
@@ -34,6 +34,11 @@ export class AddEmployeeComponent implements OnInit {
     this.router.navigate(['/dashboard/all_employee']);
   }
  
+  get empName(){return this.addEmplyeeForm.get('name')}
+  get empEmailid(){return this.addEmplyeeForm.get('emailId')}
+  get empMobileNo(){return this.addEmplyeeForm.get('mobileNo')}
+  get employeeId(){return this.addEmplyeeForm.get('empId')}
+
   ngOnInit(): void {
   }
 

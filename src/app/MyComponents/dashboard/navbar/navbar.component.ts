@@ -14,16 +14,17 @@ export class NavbarComponent implements OnInit {
 
   
   constructor(private userData: UserDataService,private router:Router ) { 
-    userData.users().subscribe((data)=>{
-      this.user=data;
-      var uid =localStorage.getItem("uid");
-      var found = this.user.filter((val:any)=>{return uid==val.id});
-      this.user = found[0]?.name;
-    });
   }
  
 
   ngOnInit(): void {
+    this.userData.users().subscribe((data)=>{
+      this.user=data;
+      var uid =localStorage.getItem("uid");
+      var found = this.user.filter((val:any)=>{return uid==val._id});
+      this.user = found[0]?.name;
+    });
+    
     this.userData.nontificationSubject.subscribe((res:any)=>{
       this.isStatus = res;
     })

@@ -4,20 +4,24 @@
         <div class="mb-3">
             <label class="form-label">Full Name</label>
             <input type="text" class="form-control" formControlName="name">
+            <span class="text-danger" *ngIf="empName && empName.invalid && empName.touched">employee name input filed is not valid</span>
         </div>
         <div class="mb-3">
             <label class="form-label">Employee Id</label>
             <input type="number" class="form-control" formControlName="empId">
+            <span class="text-danger" *ngIf="employeeId && employeeId.invalid && employeeId.touched">Empolyee id input filed is not valid</span>
           </div>
         <div class="mb-3">
           <label class="form-label">Email address</label>
           <input type="email" class="form-control" formControlName="emailId">
+          <span class="text-danger" *ngIf="empEmailid && empEmailid.invalid && empEmailid.touched">Email id input filed is not valid</span>
         </div>
         <div class="mb-3">
             <label class="form-label">Mobile No</label>
             <input type="number" class="form-control" formControlName="mobileNo">
+            <span class="text-danger" *ngIf="empMobileNo && empMobileNo.invalid && empMobileNo.touched">Mobile no input filed is not valid</span>
         </div>
-        <button type="submit" class="btn btn-primary1">Submit</button>
+        <button type="submit" [disabled]="addEmplyeeForm.invalid" class="btn btn-primary1">Submit</button>
       </form>
 </div>
 

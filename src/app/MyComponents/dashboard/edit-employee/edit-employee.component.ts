@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserDataService } from 'src/app/services/user-data.service';
@@ -9,6 +9,7 @@ import { UserDataService } from 'src/app/services/user-data.service';
   templateUrl: './edit-employee.component.html',
   styleUrls: ['./edit-employee.component.css']
 })
+
 export class EditEmployeeComponent implements OnInit {
  employees : any;
  empId = this.routes.snapshot.params['id']
@@ -17,10 +18,12 @@ export class EditEmployeeComponent implements OnInit {
     
   }
   editEmplyeeForm = new FormGroup({
-    name :new FormControl(''),
-    empId :new FormControl(''),
-    emailId :new FormControl(''),
-    mobileNo :new FormControl('')
+    name :new FormControl('',[Validators.required,Validators.pattern('[a-z A-Z]+$')]),
+    empId :new FormControl('',[Validators.required]),
+    emailId :new FormControl('',[Validators.required,Validators.email]),
+    mobileNo :new FormControl('',[Validators.required,Validators.pattern("^[0-9]{10}$")]),
+    userId :new FormControl(''),
+
   })
 
   editEmp(){
@@ -31,6 +34,11 @@ export class EditEmployeeComponent implements OnInit {
     this.toastr.success('Edit Empolyee Record Successfully',"Message");
     this.router.navigate(['/dashboard/all_employee']);
   }
+  
+  get empName(){return this.editEmplyeeForm.get('name')}
+  get empEmailid(){return this.editEmplyeeForm.get('emailId')}
+  get empMobileNo(){return this.editEmplyeeForm.get('mobileNo')}
+  get employeeId(){return this.editEmplyeeForm.get('empId')}
 
   ngOnInit(): void {
     this.userData.employees().subscribe((data)=>{
@@ -42,6 +50,7 @@ export class EditEmployeeComponent implements OnInit {
       this.editEmplyeeForm.controls['empId'].setValue(this.employees.empId)
       this.editEmplyeeForm.controls['emailId'].setValue(this.employees.emailId)
       this.editEmplyeeForm.controls['mobileNo'].setValue(this.employees.mobileNo)
+      this.editEmplyeeForm.controls['userId'].setValue(this.employees.userId)
     }
     });
   }

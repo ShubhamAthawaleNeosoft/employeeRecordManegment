@@ -10,21 +10,25 @@
           <div class="form-group mt-2">
             <i class="bi bi-person-fill"></i>
             <input type="text" class="form-control" placeholder="Name" formControlName="name">
+            <span class="text-danger" *ngIf="userName && userName.invalid && userName.touched">User name input filed is not valid</span>
           </div>
           <div class="form-group mt-3">
             <i class="bi bi-phone-fill"></i>
             <input type="number" class="form-control" placeholder="Mobile No" formControlName="mobileNo">
+            <span class="text-danger" *ngIf="userMobileno && userMobileno.invalid && userMobileno.touched">Mobile no input filed is not valid</span>
           </div>
           <div class="form-group mt-3">
             <i class="bi bi-envelope-fill"></i>
             <input type="email" class="form-control" placeholder="Work Email" formControlName="emailId">
+            <span class="text-danger" *ngIf="userEmailid && userEmailid.invalid && userEmailid.touched">Email id input filed is not valid</span>
           </div>
           <div class="form-group mt-3">
             <i class="bi bi-lock-fill"></i>
             <input type="password" class="form-control" placeholder="Password" formControlName="password">
+            <span class="text-danger" *ngIf="userPassword && userPassword.invalid && userPassword.touched">Password input filed is not valid</span>
           </div>
           <div class="d-xl-flex mt-5 align-items-center gap-4">
-            <button type="submit" class="btn btn-success">Get started now</button>
+            <button type="submit" [disabled]="registerForm.invalid"  class="btn btn-success" >Get started now</button>
             <p class="exist">Existing user? <a (click)="logIn()">Log in</a></p>
           </div>
         </form>
